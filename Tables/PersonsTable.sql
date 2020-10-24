@@ -1,0 +1,10 @@
+CREATE TABLE Persons(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	[Role] INT FOREIGN KEY REFERENCES Roles(Id),
+	[Name] NVARCHAR(50),
+	Surname NVARCHAR(50),
+	SecondName NVARCHAR(50),
+	DOB DATE,
+	Email VARCHAR(150),
+	[Password] VARCHAR(MAX)
+);
