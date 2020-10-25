@@ -9,5 +9,6 @@ CREATE TABLE Tickets(
 	[Description] NVARCHAR(MAX),
 	EctsMark VARCHAR(1),
 	Grade INT,
-	Comment NVARCHAR(MAX)
+	Comment NVARCHAR(MAX),
+	Deadline DATE
 );
