@@ -1,4 +1,5 @@
 CREATE TABLE Subjects(
 	Id INT IDENTITY(1,1) PRIMARY KEY,
-	[Name] NVARCHAR(150)
+	Title NVARCHAR(150),
+	Credits INT
 );
