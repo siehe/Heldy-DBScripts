@@ -25,8 +25,10 @@ BEGIN
 		s.*,
 
 		st.[Name] AS [Status],
+		st.Id AS statusId,
 
-		typ.[Name] AS [Type]
+		typ.[Name] AS [Type],
+		typ.Id AS typeId
 	FROM
 		(SELECT * FROM Persons WHERE Id = @assigneeId) assignee
 	INNER JOIN Tickets t ON t.AssigneeId = assignee.Id
