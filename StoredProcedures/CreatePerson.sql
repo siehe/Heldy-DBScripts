@@ -3,7 +3,7 @@ CREATE OR ALTER PROCEDURE CreatePerson(
 	@Name NVARCHAR(MAX),
 	@Surname NVARCHAR(MAX),
 	@SecondName NVARCHAR(MAX),
-	@dob DATE,
+	@dob DATE = NULL,
 	@email NVARCHAR(MAX),
 	@password NVARCHAR(MAX)
 )
