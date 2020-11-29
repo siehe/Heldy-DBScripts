@@ -1,0 +1,7 @@
+CREATE TABLE Comments(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	[Text] NVARCHAR(MAX),
+	PostDate DATETIME,
+	ReplyTo INT,
+	AuthorId INT FOREIGN KEY REFERENCES Persons(Id)
+);
