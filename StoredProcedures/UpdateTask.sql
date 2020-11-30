@@ -5,7 +5,8 @@ CREATE OR ALTER PROCEDURE UpdateTask (
 	@statement NVARCHAR(MAX),
 	@statusId INT,
 	@subjectId INT,
-	@typeId INT
+	@typeId INT,
+	@isInQa BIT
 )
 AS
 BEGIN
@@ -69,6 +70,16 @@ BEGIN
 		END;
 
 		SET @updateQuery = CONCAT(@updateQuery, 'TypeId = ', @typeId, ' ');
+	END;
+
+	IF @isInQa IS NOT NULL
+	BEGIN
+		IF @updateQuery <> ''
+		BEGIN
+			SET @updateQuery = CONCAT(@updateQuery, ', ');
+		END;
+
+		SET @updateQuery = CONCAT(@updateQuery, 'IsInQa = ', @isInQa, ' ');
 	END;
 
 	IF @updateQuery <> ''
